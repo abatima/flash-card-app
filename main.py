@@ -6,9 +6,10 @@ FONT_NAME = "Arial"
 
 def get_new_word():
     data = pandas.read_csv("data/french_words.csv")
-    foreign_words = data.French.to_list()
-    random_foreign_word = random.choice(foreign_words)
-    canvas.itemconfig(foreign_word_canvas_text, text= random_foreign_word)
+    words_dictionary = data.to_dict(orient="records")
+    random_row = random.choice(words_dictionary)
+    foreign_word = random_row["French"]
+    canvas.itemconfig(foreign_word_canvas_text, text= foreign_word)
 
 window = Tk()
 window.title("Flash Card App")
