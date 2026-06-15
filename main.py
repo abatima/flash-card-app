@@ -10,13 +10,20 @@ words_dictionary = data.to_dict(orient="records")
 
 def get_new_card():
     canvas.itemconfig(canvas_image, image=card_front)
-    random_card = random.choice(words_dictionary)
-    foreign_language_name = list(random_card.keys())[0]
+    global current_card
+    current_card = random.choice(words_dictionary)
+    foreign_language_name = list(current_card.keys())[0]
     canvas.itemconfig(language_name_text, text=foreign_language_name.lower(), fill="black")
-    foreign_word = random_card[foreign_language_name]
-    english_translation = random_card["English"]
+    foreign_word = current_card[foreign_language_name]
+    english_translation = current_card["English"]
     canvas.itemconfig(word_canvas_text, text=foreign_word, fill="black")
-    window.after(3000, flip_card, english_translation)
+    window.after(5000, flip_card, english_translation)
+
+def is_known():
+    words_dictionary.remove(current_card)
+    data = pandas.DataFrame(words_dictionary)
+    data.to_csv("data/words_to_learn.csv")
+    get_new_card()
 
 def flip_card(text):
     canvas.itemconfig(canvas_image, image=card_back)
@@ -42,7 +49,7 @@ wrong_button_image = PhotoImage(file="images/wrong.png")
 wrong_button = Button(image=wrong_button_image, command=get_new_card, highlightthickness=0)
 wrong_button.grid(column=1,row=1)
 right_button_image = PhotoImage(file="images/right.png")
-right_button = Button(image=right_button_image, command=get_new_card, highlightthickness=0)
+right_button = Button(image=right_button_image, command=is_known, highlightthickness=0)
 right_button.grid(column=2,row=1)
 
 get_new_card()
