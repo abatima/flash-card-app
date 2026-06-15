@@ -14,7 +14,9 @@ A Python desktop application for learning French vocabulary using interactive fl
 
 ## Screenshots
 
-> *(Add screenshots of your app here)*
+<img width="893" height="750" alt="Screenshot 2026-06-15 at 14 14 03" src="https://github.com/user-attachments/assets/6c7b290b-f8b8-4c53-98ba-95d54476ae62" />
+
+<img width="900" height="749" alt="Screenshot 2026-06-15 at 14 12 00" src="https://github.com/user-attachments/assets/0c7f53ba-7df3-40e6-8ddb-ef0c0a5cb5bc" />
 
 ## Requirements
 
