@@ -31,7 +31,7 @@ def get_new_card():
 def is_known():
     words_dictionary.remove(current_card)
     data = pandas.DataFrame(words_dictionary)
-    data.to_csv("data/words_to_learn.csv")
+    data.to_csv("data/words_to_learn.csv", index=False)
     get_new_card()
 
 def flip_card(text):
