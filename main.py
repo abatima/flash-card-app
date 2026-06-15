@@ -55,10 +55,10 @@ word_canvas_text = canvas.create_text(400, 303, text="", font=(FONT_NAME, 60, "b
 canvas.grid(column=1,row=0,columnspan=2)
 
 wrong_button_image = PhotoImage(file="images/wrong.png")
-wrong_button = Button(image=wrong_button_image, command=get_new_card, highlightthickness=0)
+wrong_button = Button(image=wrong_button_image, command=get_new_card, highlightthickness=0, bd=0)
 wrong_button.grid(column=1,row=1)
 right_button_image = PhotoImage(file="images/right.png")
-right_button = Button(image=right_button_image, command=is_known, highlightthickness=0)
+right_button = Button(image=right_button_image, command=is_known, highlightthickness=0, bd=0)
 right_button.grid(column=2,row=1)
 
 get_new_card()
