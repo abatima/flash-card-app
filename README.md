@@ -1,1 +1,72 @@
-# flash-card-app
+# 🃏 Flash Card App
+
+A Python desktop application for learning French vocabulary using interactive flashcards. Cards automatically flip to reveal the English translation, and the app tracks your progress by removing words you've already learned.
+
+---
+
+## Features
+
+- Displays a random French word on a flashcard
+- Automatically flips the card after 5 seconds to show the English translation
+- Mark words as **known** to remove them from future sessions
+- Progress is saved between sessions — only unseen words are shown on next launch
+- Clean, minimal GUI built with Tkinter
+
+## Screenshots
+
+> *(Add screenshots of your app here)*
+
+## Requirements
+
+- Python 3.x
+- pandas
+
+Install dependencies:
+
+```bash
+pip install pandas
+```
+
+## Getting Started
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/abatima/flash-card-app.git
+cd flash-card-app
+```
+
+2. Run the app:
+
+```bash
+python main.py
+```
+
+On first launch, the app loads from `data/french_words.csv`. As you mark words as known, a `data/words_to_learn.csv` file is created and used for all future sessions.
+
+## How to Use
+
+- When a card appears, try to recall the English translation.
+- After 5 seconds, the card flips to reveal the answer.
+- Click ✅ if you knew the word — it will be removed from your deck.
+- Click ❌ if you didn't — it stays in the deck for next time.
+
+## Project Structure
+
+```
+flash-card-app/
+├── data/
+│   ├── french_words.csv       # Full word list
+│   └── words_to_learn.csv     # Auto-generated: words not yet learned
+├── images/
+│   ├── card_front.png
+│   ├── card_back.png
+│   ├── right.png
+│   └── wrong.png
+├── main.py
+└── README.md
+```
+
+## License
+
+This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.
