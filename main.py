@@ -1,10 +1,19 @@
 from tkinter import *
 import pandas
 import random
+
+from pandas.core.methods.selectn import SelectNSeries
+
 BACKGROUND_COLOR = "#B1DDC6"
 FONT_NAME = "Arial"
-data = pandas.read_csv("data/french_words.csv")
-words_dictionary = data.to_dict(orient="records")
+try:
+    data = pandas.read_csv("data/words_to_learn.csv")
+except FileNotFoundError:
+    original_data = pandas.read_csv("data/french_words.csv")
+    words_dictionary = original_data.to_dict(orient="records")
+else:
+    words_dictionary = data.to_dict(orient="records")
+
 
 # ---------------------------- CARD MANAGER ------------------------------- #
 
